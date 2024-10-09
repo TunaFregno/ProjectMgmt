@@ -137,7 +137,7 @@ export default function ProjectForm() {
           <div className="modal-footer">
             <button
               type="button"
-              className="btn btn-secondary"
+              className="btn btn-outline-secondary"
               data-bs-dismiss="modal"
             >
               Close
@@ -145,7 +145,7 @@ export default function ProjectForm() {
             <button
               type="submit"
               data-bs-dismiss="modal"
-              className="btn btn-primary"
+              className="btn btn-dark"
             >
               Save changes
             </button>

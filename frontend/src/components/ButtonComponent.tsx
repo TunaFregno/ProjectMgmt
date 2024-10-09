@@ -1,5 +1,5 @@
 type ButtonProps = {
-  buttonType: "btn-danger" | "btn-secondary" | "btn-primary";
+  buttonType: "btn-outline-secondary" | "btn-dark" | "btn-light";
   padding?: string;
   onClick?: () => void;
   children: React.ReactNode;

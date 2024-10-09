@@ -21,7 +21,7 @@ export default function Project() {
         <div className="mx-auto w-75 card p-5 mt-5">
           <Link
             to="/"
-            className="btn btn-outline-secondary btn-sm d-inline ms-auto py-2 px-5 mb-5"
+            className="btn btn-light btn-sm d-inline ms-auto py-2 px-5 mb-5"
           >
             Back
           </Link>
@@ -39,7 +39,7 @@ export default function Project() {
               title={"Edit Project"}
               icon={<FaPencilAlt className="me-2" />}
               target="editProjectModal"
-              buttonType="btn-secondary"
+              buttonType="btn-outline-secondary"
               padding="py-2"
             >
               <EditProjectForm

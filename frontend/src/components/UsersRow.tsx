@@ -39,7 +39,7 @@ export default function UsersRow({ id, name, email, phone }: UserType) {
       <td>{email}</td>
       <td>{phone}</td>
       <td>
-        <ButtonComponent onClick={() => deleteUser()} buttonType="btn-danger">
+        <ButtonComponent onClick={() => deleteUser()} buttonType="btn-dark">
           <FaTrash />
         </ButtonComponent>
       </td>

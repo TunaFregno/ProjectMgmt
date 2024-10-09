@@ -92,16 +92,12 @@ export default function EditProjectForm({
       <div className="modal-footer">
         <button
           type="button"
-          className="btn btn-secondary"
+          className="btn btn-outline-secondary"
           data-bs-dismiss="modal"
         >
           Close
         </button>
-        <button
-          type="submit"
-          data-bs-dismiss="modal"
-          className="btn btn-primary"
-        >
+        <button type="submit" data-bs-dismiss="modal" className="btn btn-dark">
           Save changes
         </button>
       </div>

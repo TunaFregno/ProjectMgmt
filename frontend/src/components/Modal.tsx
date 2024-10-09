@@ -5,7 +5,7 @@ type ModalProps = {
   children: React.ReactNode;
   icon?: React.ReactNode;
   target: string;
-  buttonType: "btn-danger" | "btn-secondary" | "btn-primary";
+  buttonType: "btn-outline-secondary" | "btn-dark" | "btn-light";
   padding: string;
 };
 

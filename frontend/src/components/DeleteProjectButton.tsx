@@ -20,7 +20,7 @@ export default function DeleteProjectButton({
   });
   return (
     <ButtonComponent
-      buttonType="btn-danger"
+      buttonType="btn-dark"
       type="button"
       padding="py-2"
       onClick={() => deleteProject()}

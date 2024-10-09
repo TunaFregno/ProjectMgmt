@@ -13,7 +13,7 @@ export default function Home() {
           title={"Add User"}
           icon={<FaUser className="me-2" />}
           target="userModal"
-          buttonType="btn-secondary"
+          buttonType="btn-dark"
           padding="py-2"
         >
           <UserForm />
@@ -22,7 +22,7 @@ export default function Home() {
           title={"Add New Project"}
           icon={<FaList className="me-2" />}
           target="projectModal"
-          buttonType="btn-primary"
+          buttonType="btn-light"
           padding="py-2"
         >
           <ProjectForm />
@@ -30,7 +30,7 @@ export default function Home() {
       </div>
 
       <Projects />
-      <hr />
+      <hr className="my-5" />
       <Users />
     </>
   );
