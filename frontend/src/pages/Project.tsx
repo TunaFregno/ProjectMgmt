@@ -2,6 +2,7 @@ import { Link, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { GET_PROJECT } from "../queries/pojectQueries";
 import UserInfo from "../components/UserInfo";
+import DeleteProjectButton from "../components/DeleteProjectButton";
 export default function Project() {
   const { id } = useParams();
   const { loading, error, data } = useQuery(GET_PROJECT, {
@@ -30,6 +31,8 @@ export default function Project() {
             email={data.project.user.email}
             phone={data.project.user.phone}
           />
+
+          <DeleteProjectButton projectId={data.project.id} />
         </div>
       )}
     </>

@@ -1,6 +1,6 @@
 type ButtonProps = {
   buttonType: "btn-danger" | "btn-secondary" | "btn-primary";
-  padding: string;
+  padding?: string;
   onClick?: () => void;
   children: React.ReactNode;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
