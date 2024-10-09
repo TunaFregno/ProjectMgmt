@@ -1,9 +1,9 @@
 import { useQuery } from "@apollo/client";
 import UsersRow from "./UsersRow";
-import { GET_USERS } from "../mutations/userMutations";
+import { GET_USERS } from "../queries/userQueries";
 
 export type UserType = {
-  id: string;
+  id?: string;
   name: string;
   email: string;
   phone: string;

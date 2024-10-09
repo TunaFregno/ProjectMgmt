@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { useMutation } from "@apollo/client";
-import { ADD_USER, GET_USERS } from "../../mutations/userMutations";
+import { ADD_USER } from "../../mutations/userMutations";
 import { UsersQueryResult } from "../UsersRow";
+import { GET_USERS } from "../../queries/userQueries";
 
 export default function UserForm() {
   const [formData, setFormData] = useState({
@@ -34,6 +35,8 @@ export default function UserForm() {
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    console.log(formData.name, formData.email, formData.phone);
+
     if (
       formData.name === "" ||
       formData.email === "" ||
@@ -90,23 +93,23 @@ export default function UserForm() {
             onChange={handleChange}
           />
         </div>
+        <div className="modal-footer">
+          <button
+            type="button"
+            className="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Close
+          </button>
+          <button
+            type="submit"
+            data-bs-dismiss="modal"
+            className="btn btn-primary"
+          >
+            Save changeees
+          </button>
+        </div>
       </form>
-      <div className="modal-footer">
-        <button
-          type="button"
-          className="btn btn-secondary"
-          data-bs-dismiss="modal"
-        >
-          Close
-        </button>
-        <button
-          type="submit"
-          data-bs-dismiss="modal"
-          className="btn btn-primary"
-        >
-          Save changes
-        </button>
-      </div>
     </>
   );
 }

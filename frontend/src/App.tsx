@@ -1,9 +1,9 @@
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./components/Header.tsx";
 import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
-import Users from "./components/Users.tsx";
-import Modal from "./components/Modal.tsx";
-import { FaUser } from "react-icons/fa";
-import UserForm from "./components/Forms/UserForm.tsx";
+import Home from "./pages/Home.tsx";
+import NotFound from "./pages/NotFound.tsx";
+import Project from "./pages/Project.tsx";
 
 const cache = new InMemoryCache({
   typePolicies: {
@@ -33,13 +33,16 @@ function App() {
   return (
     <>
       <ApolloProvider client={client}>
-        <Header />
-        <div className="container">
-          <Modal title={"Add User"} icon={<FaUser className="me-2" />}>
-            <UserForm />
-          </Modal>
-          <Users />
-        </div>
+        <Router>
+          <Header />
+          <div className="container">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/projects/:id" element={<Project />} />
+              <Route path="*" element={<NotFound />} />$
+            </Routes>
+          </div>
+        </Router>
       </ApolloProvider>
     </>
   );

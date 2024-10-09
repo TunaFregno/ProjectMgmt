@@ -2,7 +2,7 @@ import { UserType } from "./Users";
 import { FaTrash } from "react-icons/fa";
 import { useMutation } from "@apollo/client";
 import { DELETE_USER } from "../mutations/userMutations";
-import { GET_USERS } from "../mutations/userMutations";
+import { GET_USERS } from "../queries/userQueries";
 import ButtonComponent from "./ButtonComponent";
 
 export type UsersQueryResult = {
