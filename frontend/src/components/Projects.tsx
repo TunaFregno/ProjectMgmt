@@ -3,8 +3,9 @@ import { GET_PROJECTS } from "../queries/pojectQueries";
 import ProjectCard from "./ProjectCard";
 
 export type ProjectType = {
-  id: string;
+  id?: string;
   name: string;
+  description?: string;
   status: string;
 };
 

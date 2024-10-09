@@ -3,6 +3,7 @@ import { FaTrash } from "react-icons/fa";
 import { useMutation } from "@apollo/client";
 import { DELETE_USER } from "../mutations/userMutations";
 import { GET_USERS } from "../queries/userQueries";
+import { GET_PROJECTS } from "../queries/pojectQueries";
 import ButtonComponent from "./ButtonComponent";
 
 export type UsersQueryResult = {
@@ -17,8 +18,8 @@ export type UsersQueryResult = {
 export default function UsersRow({ id, name, email, phone }: UserType) {
   const [deleteUser] = useMutation(DELETE_USER, {
     variables: { id: id },
-    //refetchQueries: [{ query: GET_USERS }],
-    update(cache, { data: { deleteUser } }) {
+    refetchQueries: [{ query: GET_USERS }, { query: GET_PROJECTS }],
+    /* update(cache, { data: { deleteUser } }) {
       const { users } =
         cache.readQuery<UsersQueryResult>({ query: GET_USERS }) || {};
       cache.writeQuery({
@@ -29,7 +30,7 @@ export default function UsersRow({ id, name, email, phone }: UserType) {
           ),
         },
       });
-    },
+    }, */
   });
 
   return (

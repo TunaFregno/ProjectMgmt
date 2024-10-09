@@ -19,16 +19,14 @@ export default function DeleteProjectButton({
     refetchQueries: [{ query: GET_PROJECTS }],
   });
   return (
-    <div className="d-flex mt-5 ms-auto">
-      <ButtonComponent
-        buttonType="btn-danger"
-        type="button"
-        padding="py-2"
-        onClick={() => deleteProject()}
-      >
-        <FaTrash className="me-2 mb-1" />
-        Delete Project
-      </ButtonComponent>
-    </div>
+    <ButtonComponent
+      buttonType="btn-danger"
+      type="button"
+      padding="py-2"
+      onClick={() => deleteProject()}
+    >
+      <FaTrash className="me-2 mb-1" />
+      Delete Project
+    </ButtonComponent>
   );
 }

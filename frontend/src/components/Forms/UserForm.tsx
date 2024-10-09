@@ -35,7 +35,6 @@ export default function UserForm() {
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(formData.name, formData.email, formData.phone);
 
     if (
       formData.name === "" ||

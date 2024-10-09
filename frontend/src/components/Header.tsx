@@ -3,7 +3,7 @@ import reactLogo from "../assets/react.svg";
 const Header = () => {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light mb-4 p-0">
+      <nav className="navbar navbar-expand-lg navbar-light  mb-4 p-0 mt-3">
         <div className="container">
           <a className="navbar-brand">
             <div className="d-flex">

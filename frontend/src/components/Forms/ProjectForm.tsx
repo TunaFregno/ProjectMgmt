@@ -53,7 +53,6 @@ export default function ProjectForm() {
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(formData.name, formData.description, formData.status);
 
     if (
       formData.name === "" ||
@@ -148,7 +147,7 @@ export default function ProjectForm() {
               data-bs-dismiss="modal"
               className="btn btn-primary"
             >
-              Save changeees
+              Save changes
             </button>
           </div>
         </form>

@@ -3,6 +3,9 @@ import { useQuery } from "@apollo/client";
 import { GET_PROJECT } from "../queries/pojectQueries";
 import UserInfo from "../components/UserInfo";
 import DeleteProjectButton from "../components/DeleteProjectButton";
+import { FaPencilAlt } from "react-icons/fa";
+import Modal from "../components/Modal";
+import EditProjectForm from "../components/Forms/EditProjectForm";
 export default function Project() {
   const { id } = useParams();
   const { loading, error, data } = useQuery(GET_PROJECT, {
@@ -15,10 +18,10 @@ export default function Project() {
   return (
     <>
       {!loading && !error && (
-        <div className="mx-auto w-75 card p-5">
+        <div className="mx-auto w-75 card p-5 mt-5">
           <Link
             to="/"
-            className="btn btn-light btn-sm d-inline ms-auto py-2 px-5 mb-5"
+            className="btn btn-outline-secondary btn-sm d-inline ms-auto py-2 px-5 mb-5"
           >
             Back
           </Link>
@@ -31,8 +34,24 @@ export default function Project() {
             email={data.project.user.email}
             phone={data.project.user.phone}
           />
+          <div className="d-flex mt-5 ms-auto gap-3">
+            <Modal
+              title={"Edit Project"}
+              icon={<FaPencilAlt className="me-2" />}
+              target="editProjectModal"
+              buttonType="btn-secondary"
+              padding="py-2"
+            >
+              <EditProjectForm
+                id={data.project.id}
+                name={data.project.name}
+                description={data.project.description}
+                status={data.project.status}
+              />
+            </Modal>
 
-          <DeleteProjectButton projectId={data.project.id} />
+            <DeleteProjectButton projectId={data.project.id} />
+          </div>
         </div>
       )}
     </>
