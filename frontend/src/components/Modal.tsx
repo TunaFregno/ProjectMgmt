@@ -5,8 +5,9 @@ type ModalProps = {
   children: React.ReactNode;
   icon?: React.ReactNode;
   target: string;
-  buttonType: "btn-outline-secondary" | "btn-dark" | "btn-light";
+  buttonType: "btn-outline-secondary" | "btn-dark" | "btn-light" | "btn-info";
   padding: string;
+  color?: string;
 };
 
 export default function Modal({
@@ -16,6 +17,7 @@ export default function Modal({
   target,
   buttonType,
   padding,
+  color,
 }: ModalProps) {
   return (
     <>
@@ -25,6 +27,7 @@ export default function Modal({
         type="button"
         data-bs-target={`#${target}`} //"#baseModal"
         padding={padding}
+        color={color}
       >
         {icon}
         {title}

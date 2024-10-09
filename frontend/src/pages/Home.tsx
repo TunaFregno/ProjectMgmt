@@ -13,8 +13,9 @@ export default function Home() {
           title={"Add User"}
           icon={<FaUser className="me-2" />}
           target="userModal"
-          buttonType="btn-dark"
+          buttonType="btn-info"
           padding="py-2"
+          color="text-light"
         >
           <UserForm />
         </Modal>
@@ -22,7 +23,7 @@ export default function Home() {
           title={"Add New Project"}
           icon={<FaList className="me-2" />}
           target="projectModal"
-          buttonType="btn-light"
+          buttonType="btn-dark"
           padding="py-2"
         >
           <ProjectForm />
